@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reddit Analyzer</title>
+    </head>
+    <body>
+        <h2>Reddit Analyzer</h2>
+
+        <textarea id="request" rows="10" cols="60">
+            {
+              "items": [
+                {
+                  "subreddit": "/r/aww",
+                  "keywords": ["cat", "dog"]
+                }
+              ],
+              "limit": 10
+            }
+        </textarea>
+
+        <br><br>
+        <button onclick="download()">Download File</button>
+
+        <script>
+            async function download() {
+                const response = await fetch('/api/reddit/analyze/file', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: document.getElementById('request').value
+                });
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'result.json';
+                a.click();
+            }
+        </script>
+    </body>
+</html>
