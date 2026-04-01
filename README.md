@@ -33,12 +33,13 @@ Logs are written to:
 logs/out.log
 
 🧪 Features
-Filtering by title and post body
-Detecting images in posts
-Multithreading (async/await)
-Error handling
-File output
-Docker support
+-- Filtering by title and post body
+-- Detecting images in posts
+-- Multithreading (async/await)
+-- Error handling
+-- File output
+-- Docker support
+________________________________________________________________
 
 Example request:
 json
