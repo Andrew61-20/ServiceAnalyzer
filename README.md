@@ -40,6 +40,18 @@ Error handling
 File output
 Docker support
 
+Example request:
+json
+{
+  "items": [
+    {
+      "subreddit": "/r/aww",
+      "keywords": ["cat", "dog"]
+    }
+  ],
+  "limit": 10
+}
+
 ----------------------------
 
 Потенційні проблеми з парсингом HTTP + HTML.
